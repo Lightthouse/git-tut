@@ -35,13 +35,10 @@ tracked/untracked: список состояний файлов для git.
 
 ```mermaid
 graph LR;
-
-%% Важный комментарий! 
-
   untracked -- "git add" --> staged;
   staged    -- "git commit" --> tracked;
   tracked    -- "nano" --> modified;
-  staged    -- "git add" --> tracked/staged;
+  modified    -- "git add" --> staged;
 
 ``` 
 

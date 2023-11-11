@@ -16,7 +16,8 @@ def fn(a):
 - origin
 - tracked/untracked
 
-
+git log: выводит список коммитов в обратном порядке. У каждого коммита присутствует хэш, автор и дата. Флаг
+-- oneline позволяет выводить в сокращенной форме.
 
 
 [ссылка на урок](https://practicum.yandex.ru/trainer/git-basics/lesson/c6b9607c-e8bc-4446-89f9-c74522c3492f/ 'Yandex practicum' )

@@ -22,9 +22,9 @@ git log: выводит список коммитов в обратном пор
 
 git status: выводит список файлов, которые не отслеживаются либо отслеживаются и были изменены.
 
-HEAD: ссылка на последний коммит в ветке. Выводится при вызове git status. В папке .git есть файл HEAD, в котором указан путь до другого файла *ref: refs/heads/master*. В этом файле хранится хэш последнего коммита.
+HEAD: ссылка на последний коммит в ветке. Выводится при вызове git status. В папке .git есть файл HEAD, в котором указан путь до другого файла __ref: refs/heads/master__. В этом файле хранится хэш последнего коммита.
 
-origin: псевдоним к текущему git репозиторию. Позволяет связывать текущий репозиторий и удаленный - git remote add origin _ссылка на удаленный репозиторий_.
+origin: псевдоним к текущему git репозиторию. Позволяет связывать текущий репозиторий и удаленный - git remote add origin <ссылка на удаленный репозиторий>.
 
 tracked/untracked: список состояний файлов для git. 
 1) touch newfile.txt: untracked - файл не отслеживается 
@@ -33,5 +33,16 @@ tracked/untracked: список состояний файлов для git.
 4) nano newfile.txt: tracked + modified - файл отслеживается, но еще не готов для коммита
 
 
+```mermaid
+graph LR;
+
+%% Важный комментарий! 
+
+  untracked -- "git add" --> staged;
+  staged    -- "git commit" --> tracked;
+  tracked    -- "nano" --> modified;
+  staged    -- "git add" --> tracked/staged;
+
+``` 
 
 [ссылка на урок](https://practicum.yandex.ru/trainer/git-basics/lesson/c6b9607c-e8bc-4446-89f9-c74522c3492f/ 'Yandex practicum' )
